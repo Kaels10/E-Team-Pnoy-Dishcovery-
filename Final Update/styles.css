@@ -3,7 +3,9 @@
     --primary-color: #A5705E; /* Primary color */
     --white-color: #ffffff; /* White */
     --dark-color: #333333; /* Dark gray */
+    --black-color: #000000; /* Black */
 }
+
 
 /* Reset default margin and set global styles */
 * {
@@ -20,7 +22,7 @@ body {
 
 /* Navbar styles */
 .navbar {
-    width: 100%; /* Adjusted width to cover the entire header */
+    width: 90%; /* Adjusted width to cover the entire header */
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -195,6 +197,8 @@ button:hover,
     text-decoration: underline;
 }
 
+/* styles.css */
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -241,6 +245,7 @@ button:hover,
     line-height: normal; /* Reset line-height to normal */
 }
 
+/* Add your flexbox styles here */
 .recipes-container {
     display: flex;
     flex-wrap: wrap;
@@ -251,8 +256,10 @@ button:hover,
     left: 50%; /* Position from the middle of the viewport */
     transform: translate(-50%, -50%); /* Center the container */
     z-index: 2;
-    width: 100%; /* Adjusted width for better fit */
+    max-height: 450px;
     max-width: 1300px; /* Set a maximum width */
+    width: 100%;
+    height: 100%;
     padding: 20px; /* Add padding for spacing */
     background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
     border-radius: 10px; /* Add border radius */
@@ -260,11 +267,12 @@ button:hover,
 }
   
 .recipe-card {
-    width: 300px; /* Adjust as needed */
+    height: 400px;
+    width: 290px; /* Adjust as needed */
     margin-bottom: 0px; /* Add space between recipe cards */
     background-color: #f9f9f9; /* Add background color for better visibility */
     border-radius: 8px; /* Add border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    box-shadow: 0 2spx 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
     padding: 20px; /* Add padding inside the card */
 }
   
@@ -404,64 +412,118 @@ button:hover,
         height: 200px;
         object-fit: cover; /* Maintain aspect ratio and crop if necessary */
         border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
-    }
-    .add-recipe-button {
-        margin-top: 20px;
-        margin-left: 20px;
-        padding: 10px 20px;
-        background-color: #A5705E;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-    }
-    .popup-content {
-        background-color: var(--white-color);
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 0 210px rgba(0, 0, 0, 0.3);
-        max-width: 80%; /* Expanded width for the popup */
-        max-height: 80%;
-        overflow-y: auto;
-        text-align: left;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 24px;
-        color: var(--dark-color);
-    }
+    
+    .add-recipe-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px; /* Adjust as needed */
+        }
+        
+        .add-recipe-button {
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    margin-bottom: 30px;
+    text-align: center; /* Center align text */
+  }
+  
+  .avatar-container {
+    position: relative; /* Positioning context for the avatar */
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 5px solid var(--primary-color); /* Add border */
+  }
+  
+  .user-details {
+    font-size: 1.2rem;
+    margin-top: 20px; /* Adjust spacing between avatar and user details */
+  }
+  
+  .user-details h2 {
+    margin-bottom: 10px;
+    color: var(--white-color); /* Change heading color */
+  }
+  
+  .user-details p {
+    color: var(--white-color);
+  }
+  
+  .saved-recipes,
+  .shopping-list {
+    margin-top: 40px;
+  }
+  
+  .saved-recipes h2,
+  .shopping-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--white-color);
+  }
+  
+  .saved-recipes ul,
+  .shopping-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .saved-recipes ul li,
+  .shopping-list ul li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--white-color);
+  }
+  
+  .saved-recipes ul li a,
+  .shopping-list ul li {
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .saved-recipes ul li a:hover {
+    color: var(--primary-color); /* Change hover color */
+  }
+  
+  /* Hide input[type="file"] element */
+  #avatar-upload {
+    display: none;
+  }
+  
+  /* Smaller font size for the User Profile heading */
+  .content h1 {
+    font-size: 2.5rem;
+    color: var(--white-color);
+  }
+  
     .recipe-details {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
     }
     .recipe-image {
-        display: none;
+        margin-bottom: 20px;
     }
     .recipe-image img {
         width: 100%;
         max-width: 300%;
         height: auto;
-        border-radius: 8px;
+        border-radius: 15px;
     }
     .recipe-description {
         flex: 1;
@@ -480,124 +542,47 @@ button:hover,
         margin-left: 0;
         padding-left: 20px;
     }
-
-    .profile-info {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Center horizontally */
-        margin-bottom: 30px;
-        text-align: center; /* Center align text */
-      }
-      
-      .avatar-container {
-        position: relative; /* Positioning context for the avatar */
-      }
-      
-      .avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        cursor: pointer;
-        border: 5px solid var(--primary-color); /* Add border */
-      }
-      
-      .user-details {
-        font-size: 1.2rem;
-        margin-top: 20px; /* Adjust spacing between avatar and user details */
-      }
-      
-      .user-details h2 {
-        margin-bottom: 10px;
-        color: var(--white-color); /* Change heading color */
-      }
-      
-      .user-details p {
-        color: var(--white-color);
-      }
-      
-      .saved-recipes,
-      .shopping-list {
-        margin-top: 40px;
-      }
-      
-      .saved-recipes h2,
-      .shopping-list h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--white-color);
-      }
-      
-      .saved-recipes ul,
-      .shopping-list ul {
-        list-style: none;
-        padding: 0;
-      }
-      
-      .saved-recipes ul li,
-      .shopping-list ul li {
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-        color: var(--white-color);
-      }
-      
-      .saved-recipes ul li a,
-      .shopping-list ul li {
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      
-      .saved-recipes ul li a:hover {
-        color: var(--primary-color); /* Change hover color */
-      }
-      
-      /* Hide input[type="file"] element */
-      #avatar-upload {
-        display: none;
-      }
-      
-      /* Smaller font size for the User Profile heading */
-      .content h1 {
-        font-size: 2.5rem;
-        color: var(--white-color);
-      }
-      
-      /* Add this CSS */
-    .rating-icons label {
-        color: #ddd; /* Default color */
-        cursor: pointer;
     }
+            /* Additional CSS to adjust image size */
+            .recipe-card img {
+                width: 250px;
+                height: 200px;
+                object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+                border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+            }
 
-    .rating-icons input[type="radio"] {
-        display: none; /* Hide radio buttons */
-    }
-
-    .rating-icons label:hover ion-icon,
-    .rating-icons input[type="radio"]:checked ~ label ion-icon {
-        color: gold; /* Change icon color on hover and when checked */
-        transform: scale(1.2); /* Increase size on hover and when checked */
-        transition: all 0.3s ease; /* Smooth transition */
-    }
-
-    .rating-icons input[type="radio"]:checked ~ label {
-        color: gold; /* Change color of checked stars to gold */
-    }
-
-    /* Style to override for 5-star rating */
-    #rating5:checked ~ label {
-        color: gold;
-    }
-
-    /* Updated CSS for food category button */
-.food-category-button {
-    background-color:var(--primary-color);
-    border: none;
-    color: var(--white-color);
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 10px; /* Adjust spacing as needed */
-}
-
-.food-category-button:hover {
-    background-color: var(--dark-color);
-}
+            .rpopup-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+            .rpopup-content {
+                background-color: var(--white-color);
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 0 210px rgba(0, 0, 0, 0.3);
+                max-width: 80%; /* Expanded width for the popup */
+                max-height: 70vh;
+                overflow-y: auto;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                color: #333; /* Font color */
+            }
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                font-size: 20px;
+                color: #555;
+            }
