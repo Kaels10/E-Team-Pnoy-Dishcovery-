@@ -22,11 +22,11 @@ body {
 
 /* Navbar styles */
 .navbar {
-    width: 90%; /* Adjusted width to cover the entire header */
-    padding: 15px 0;
+    width: 100%; /* Adjusted width to cover the entire header */
+    padding: 10px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: absolute; /* Position navbar absolutely */
     top: 0; /* Position navbar at the top of the header */
     left: 0; /* Align navbar to the left */
@@ -37,7 +37,7 @@ body {
     height: 100px;
     width: auto;
     cursor: pointer;
-    margin-left: 150px;
+    margin-left: 0px;
 }
 
 .navbar ul {
@@ -48,7 +48,7 @@ body {
 
 .navbar ul li {
     display: inline;
-    margin: 20px;
+    margin: 10px;
     position: relative;
 }
 
