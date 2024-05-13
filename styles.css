@@ -3,7 +3,9 @@
     --primary-color: #A5705E; /* Primary color */
     --white-color: #ffffff; /* White */
     --dark-color: #333333; /* Dark gray */
+    --black-color: #000000; /* Black */
 }
+
 
 /* Reset default margin and set global styles */
 * {
@@ -20,18 +22,22 @@ body {
 
 /* Navbar styles */
 .navbar {
-    width: 85%;
-    margin: auto;
+    width: 90%; /* Adjusted width to cover the entire header */
     padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute; /* Position navbar absolutely */
+    top: 0; /* Position navbar at the top of the header */
+    left: 0; /* Align navbar to the left */
+    z-index: 999; /* Ensure navbar is on top of other content */
 }
 
 .navbar .logo {
-    height: 150px;
+    height: 100px;
     width: auto;
     cursor: pointer;
+    margin-left: 150px;
 }
 
 .navbar ul {
@@ -250,8 +256,10 @@ button:hover,
     left: 50%; /* Position from the middle of the viewport */
     transform: translate(-50%, -50%); /* Center the container */
     z-index: 2;
-    width: 100%; /* Adjusted width for better fit */
+    max-height: 450px;
     max-width: 1300px; /* Set a maximum width */
+    width: 100%;
+    height: 100%;
     padding: 20px; /* Add padding for spacing */
     background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
     border-radius: 10px; /* Add border radius */
@@ -259,11 +267,12 @@ button:hover,
 }
   
 .recipe-card {
-    width: 300px; /* Adjust as needed */
+    height: 400px;
+    width: 290px; /* Adjust as needed */
     margin-bottom: 0px; /* Add space between recipe cards */
     background-color: #f9f9f9; /* Add background color for better visibility */
     border-radius: 8px; /* Add border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    box-shadow: 0 2spx 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
     padding: 20px; /* Add padding inside the card */
 }
   
@@ -321,180 +330,259 @@ button:hover,
   .pagination button.active {
     background-color: darken(var(--primary-color), 10%);
   }
-.add-recipe-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px; /* Adjust as needed */
+
+  .servings {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
 }
 
-.add-recipe-button {
-    padding: 15px 30px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.servings-btn {
+    width: 30px; /* Set width */
+    height: 30px; /* Set height */
+    padding: 0; /* Remove padding */
+    font-size: 16px;
+    border: none; /* Remove border */
+    background-color: var(--primary-color); /* Use primary color */
+    color: var(--white-color); /* Text color */
+    border-radius: 50%; /* Make it round */
     cursor: pointer;
-    font-size: 18px;
     transition: background-color 0.3s ease;
-}
-
-.add-recipe-button:hover {
-    background-color: #45a049;
-}
-/* Add Recipe Form Popup */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.popup-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 80%; /* Expanded width for the popup */
-    max-height: 80%; /* Expanded height for the popup */
-    overflow-y: auto; /* Add scroll for overflow content */
-    text-align: left;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    color: #555;
-}
-
-#addRecipeForm {
-    margin-top: 20px;
-}
-
-#addRecipeForm label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#addRecipeForm input[type="text"],
-#addRecipeForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-#addRecipeForm input[type="file"] {
-    margin-bottom: 20px;
-}
-
-#addRecipeForm input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    margin: 0 5px; /* Add margin for spacing */
 }
 
-.popup-content {
-    background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity or color as needed */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    overflow-y: auto;
-    text-align: left;
-    position: relative;
+.servings-btn:hover {
+    background-color: var(--dark-color); /* Darker color on hover */
 }
-.content {
-    padding: 20px;
-    padding-top: 80px; /* Increased padding to avoid overlap with navigation bar */
+
+.servings-count {
+    padding: 0 10px;
+    font-size: 16px;
+    color: var(--dark-color); /* Use dark color for count */
 }
-/* Additional CSS for refined format */
-.content {
-    padding: 20px;
-    padding-top: 80px; /* Adjusted padding to avoid overlap */
-    text-align: center; /* Align all content in the center */
+
+.servings-title {
+    font-size: 16px;
+    color: var(--dark-color); /* Use dark color for the title */
+    margin-right: 10px; /* Add some margin between title and buttons */
 }
+
+.recipe-card img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+  }
+
+  /* Center pagination */
+  .footer {
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #ddd;
+  }
+
+  .pagination a.active {
+    background-color: #A5705E;
+    color: white;
+    border: 1px solid #A5705E;
+  }
+
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+  }
+    /* Additional CSS to adjust image size */
+    .recipe-card img {
+        width: 250px;
+        height: 200px;
+        object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+        border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+    
+    .add-recipe-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px; /* Adjust as needed */
+        }
+        
+        .add-recipe-button {
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+
 
 .profile-info {
     display: flex;
     align-items: center;
-    justify-content: center; /* Align items in the center horizontally */
+    justify-content: center; /* Center horizontally */
     margin-bottom: 30px;
-}
-
-.avatar {
+    text-align: center; /* Center align text */
+  }
+  
+  .avatar-container {
+    position: relative; /* Positioning context for the avatar */
+  }
+  
+  .avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin-right: 20px;
-}
-
-.user-details {
-    font-size: 1rem; /* Reduced font size for user details */
-    text-align: left; /* Align user details text to the left */
-}
-
-.saved-recipes,
-.shopping-list {
-    display: inline-block;
-    vertical-align: top; /* Ensure alignment */
-    margin: 0 10px; /* Add space between sections */
-}
-
-.saved-recipes h2,
-.shopping-list h2 {
+    cursor: pointer;
+    border: 5px solid var(--primary-color); /* Add border */
+  }
+  
+  .user-details {
+    font-size: 1.2rem;
+    margin-top: 20px; /* Adjust spacing between avatar and user details */
+  }
+  
+  .user-details h2 {
+    margin-bottom: 10px;
+    color: var(--white-color); /* Change heading color */
+  }
+  
+  .user-details p {
+    color: var(--white-color);
+  }
+  
+  .saved-recipes,
+  .shopping-list {
+    margin-top: 40px;
+  }
+  
+  .saved-recipes h2,
+  .shopping-list h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-}
-
-.saved-recipes ul li,
-.shopping-list ul li {
-    font-size: 1.2rem;
+    color: var(--white-color);
+  }
+  
+  .saved-recipes ul,
+  .shopping-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .saved-recipes ul li,
+  .shopping-list ul li {
     margin-bottom: 10px;
-}
-
-.saved-recipes ul li a {
+    font-size: 1.2rem;
+    color: var(--white-color);
+  }
+  
+  .saved-recipes ul li a,
+  .shopping-list ul li {
     text-decoration: none;
     transition: color 0.3s;
-}
+  }
+  
+  .saved-recipes ul li a:hover {
+    color: var(--primary-color); /* Change hover color */
+  }
+  
+  /* Hide input[type="file"] element */
+  #avatar-upload {
+    display: none;
+  }
+  
+  /* Smaller font size for the User Profile heading */
+  .content h1 {
+    font-size: 2.5rem;
+    color: var(--white-color);
+  }
+  
+    .recipe-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .recipe-image {
+        margin-bottom: 20px;
+    }
+    .recipe-image img {
+        width: 100%;
+        max-width: 300%;
+        height: auto;
+        border-radius: 15px;
+    }
+    .recipe-description {
+        flex: 1;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-top: 20px;
+    }
+    .recipe-info {
+        margin-top: 30px;
+    }
+    .recipe-info h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .recipe-info ul, .recipe-info ol {
+        margin-left: 0;
+        padding-left: 20px;
+    }
+    }
+            /* Additional CSS to adjust image size */
+            .recipe-card img {
+                width: 250px;
+                height: 200px;
+                object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+                border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+            }
 
-.saved-recipes ul li a:hover {
-    color: #666;
-}
-/* Additional CSS for sign-out button */
-.sign-out {
-    text-align: center;
-    margin-bottom: 20px; /* Add space between sign-out button and sections */
-}
-.sign-out button:hover {
-    background-color: #0056b3; /* Darker color on hover */
-}
+            .rpopup-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+            .rpopup-content {
+                background-color: var(--white-color);
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 0 210px rgba(0, 0, 0, 0.3);
+                max-width: 80%; /* Expanded width for the popup */
+                max-height: 70vh;
+                overflow-y: auto;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                color: #333; /* Font color */
+            }
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                font-size: 20px;
+                color: #555;
+            }
