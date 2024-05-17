@@ -22,15 +22,15 @@ body {
 
 /* Navbar styles */
 .navbar {
-    width: 100%; /* Adjusted width to cover the entire header */
+    width: 100%; 
     padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute; /* Position navbar absolutely */
-    top: 0; /* Position navbar at the top of the header */
-    left: 0; /* Align navbar to the left */
-    z-index: 999; /* Ensure navbar is on top of other content */
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 999; 
 }
 
 .navbar .logo {
@@ -73,7 +73,7 @@ body {
     width: 100%;
 }
 
-/* Content styles */
+
 .content {
     width: 100%;
     position: absolute;
@@ -95,7 +95,7 @@ body {
     line-height: 1.5;
 }
 
-/* Button styles */
+
 button,
 .login-button,
 .register-button {
@@ -207,75 +207,76 @@ button:hover,
 
 .search-bar input[type="text"] {
     height: 40px;
+    margin-top: 10px;
     padding: 10.4px;
-    border-radius: 100px 0 0 100px; /* Adjusted border radius for a seamless integration */
-    border: 2px solid var(--primary-color); /* Adjusted border for a seamless integration */
-    border-right: none; /* Remove right border to merge with button */
-    outline: none; /* Remove default input focus outline */
-    transition: border-color 0.3s ease; /* Smooth transition for border color change */
-    flex: 1; /* Take remaining space */
+    border-radius: 100px 0 0 100px; 
+    border: 2px solid var(--primary-color); 
+    border-right: none; 
+    outline: none; 
+    transition: border-color 0.3s ease; 
+    flex: 1; 
     
 }
 
 .search-bar input[type="text"]:focus {
-    border-color: var(--primary-color); /* Change border color on focus */
+    border-color: var(--primary-color); 
 }
 
 .search-bar button {
-    width: 50px; /* Adjusted button width for better proportion */
-    height: 50px; /* Adjusted button height for better proportion */
-    font-size: 1.5rem; /* Slightly reduced font size for better fit */
-    border: 2px solid var(--primary-color); /* Adjusted border for a seamless integration */
-    border-radius: 0 25px 25px 0; /* Adjusted border radius for a seamless integration */
+    width: 50px; 
+    height: 40px; 
+    font-size: 1.5rem; 
+    border: 2px solid var(--primary-color); 
+    border-radius: 0 25px 25px 0; 
     background-color: var(--primary-color);
     color: var(--white-color);
     cursor: pointer;
     margin-left: 0px;
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    transition: background-color 0.3s ease;
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .search-bar button:hover {
-    background-color: darken(var(--primary-color), 10%); /* Darken button color on hover */
-    border-color: darken(var(--primary-color), 10%); /* Darken border color on hover */
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
 }
 
 .search-bar button ion-icon {
-    font-size: 1.2rem; /* Adjusted icon size for better visibility */
-    line-height: normal; /* Reset line-height to normal */
+    font-size: 1.2rem;
+    line-height: normal; 
 }
 
-/* Add your flexbox styles here */
+
 .recipes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
     position: absolute;
-    top: 50%; /* Position from the middle of the viewport */
-    left: 50%; /* Position from the middle of the viewport */
-    transform: translate(-50%, -50%); /* Center the container */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     z-index: 2;
     max-height: 450px;
-    max-width: 1300px; /* Set a maximum width */
+    max-width: 1300px; 
     width: 100%;
     height: 100%;
-    padding: 20px; /* Add padding for spacing */
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-    border-radius: 10px; /* Add border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
   
 .recipe-card {
     height: 400px;
-    width: 290px; /* Adjust as needed */
-    margin-bottom: 0px; /* Add space between recipe cards */
-    background-color: #f9f9f9; /* Add background color for better visibility */
-    border-radius: 8px; /* Add border radius for rounded corners */
-    box-shadow: 0 2spx 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    padding: 20px; /* Add padding inside the card */
+    width: 290px; 
+    margin-bottom: 0px; 
+    background-color: #f9f9f9;
+    border-radius: 8px; 
+    box-shadow: 0 2spx 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
 }
   
 .recipe-title {
@@ -302,7 +303,7 @@ button:hover,
 .pagination-container {
     width: 100%;
     position: absolute;
-    bottom: 20px; /* Adjust as needed */
+    bottom: 20px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -334,48 +335,48 @@ button:hover,
   }
 
   .servings {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Center items vertically */
+    display: flex; 
+    align-items: center; 
 }
 
 .servings-btn {
-    width: 30px; /* Set width */
-    height: 30px; /* Set height */
-    padding: 0; /* Remove padding */
+    width: 30px; 
+    height: 30px; 
+    padding: 0;
     font-size: 16px;
-    border: none; /* Remove border */
-    background-color: var(--primary-color); /* Use primary color */
-    color: var(--white-color); /* Text color */
-    border-radius: 50%; /* Make it round */
+    border: none; 
+    background-color: var(--primary-color); 
+    color: var(--white-color); 
+    border-radius: 50%; 
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px; /* Add margin for spacing */
+    margin: 0 5px; 
 }
 
 .servings-btn:hover {
-    background-color: var(--dark-color); /* Darker color on hover */
+    background-color: var(--dark-color); 
 }
 
 .servings-count {
     padding: 0 10px;
     font-size: 16px;
-    color: var(--dark-color); /* Use dark color for count */
+    color: var(--dark-color); 
 }
 
 .servings-title {
     font-size: 16px;
-    color: var(--dark-color); /* Use dark color for the title */
-    margin-right: 10px; /* Add some margin between title and buttons */
+    color: var(--dark-color); 
+    margin-right: 10px; 
 }
 
 .recipe-card img {
     width: 250px;
     height: 200px;
-    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
-    border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+    object-fit: cover; 
+    border-radius: 8px 8px 0 0; 
   }
 
   /* Center pagination */
@@ -408,17 +409,17 @@ button:hover,
   .pagination a:hover:not(.active) {
     background-color: #ddd;
   }
-    /* Additional CSS to adjust image size */
+    /* to adjust image size */
     .recipe-card img {
         width: 250px;
         height: 200px;
-        object-fit: cover; /* Maintain aspect ratio and crop if necessary */
-        border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+        object-fit: cover; 
+        border-radius: 8px 8px 0 0; 
     
     .add-recipe-container {
             display: flex;
             justify-content: center;
-            margin-top: 100px; /* Adjust as needed */
+            margin-top: 100px; 
         }
         
         .add-recipe-button {
@@ -437,13 +438,13 @@ button:hover,
 .profile-info {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center horizontally */
+    justify-content: center; 
     margin-bottom: 30px;
-    text-align: center; /* Center align text */
+    text-align: center; 
   }
   
   .avatar-container {
-    position: relative; /* Positioning context for the avatar */
+    position: relative; 
   }
   
   .avatar {
@@ -451,17 +452,17 @@ button:hover,
     height: 100px;
     border-radius: 50%;
     cursor: pointer;
-    border: 5px solid var(--primary-color); /* Add border */
+    border: 5px solid var(--primary-color); 
   }
   
   .user-details {
     font-size: 1.2rem;
-    margin-top: 20px; /* Adjust spacing between avatar and user details */
+    margin-top: 20px; 
   }
   
   .user-details h2 {
     margin-bottom: 10px;
-    color: var(--white-color); /* Change heading color */
+    color: var(--white-color);
   }
   
   .user-details p {
@@ -500,15 +501,13 @@ button:hover,
   }
   
   .saved-recipes ul li a:hover {
-    color: var(--primary-color); /* Change hover color */
+    color: var(--primary-color); 
   }
   
-  /* Hide input[type="file"] element */
   #avatar-upload {
     display: none;
   }
   
-  /* Smaller font size for the User Profile heading */
   .content h1 {
     font-size: 2.5rem;
     color: var(--white-color);
@@ -549,8 +548,8 @@ button:hover,
             .recipe-card img {
                 width: 250px;
                 height: 200px;
-                object-fit: cover; /* Maintain aspect ratio and crop if necessary */
-                border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+                object-fit: cover; 
+                border-radius: 8px 8px 0 0; 
             }
 
             .rpopup-overlay {
@@ -570,7 +569,7 @@ button:hover,
                 padding: 40px;
                 border-radius: 15px;
                 box-shadow: 0 0 210px rgba(0, 0, 0, 0.3);
-                max-width: 80%; /* Expanded width for the popup */
+                max-width: 80%; 
                 max-height: 70vh;
                 overflow-y: auto;
                 position: relative;
@@ -588,7 +587,7 @@ button:hover,
                 font-size: 20px;
                 color: #555;
             }
-            .rating-icons {  /* Target the container within the recipe form */
+            .rating-icons {  
                 display: flex;
                 align-items: center;
               }
@@ -599,14 +598,14 @@ button:hover,
             }
         
             .rating-icons input[type="radio"] {
-                display: none; /* Hide radio buttons */
+                display: none; 
             }
         
             .rating-icons label:hover ion-icon,
             .rating-icons input[type="radio"]:checked ~ label ion-icon {
                 color: gold; /* Change icon color on hover and when checked */
-                transform: scale(1.2); /* Increase size on hover and when checked */
-                transition: all 0.3s ease; /* Smooth transition */
+                transform: scale(1.2); 
+                transition: all 0.3s ease; 
             }
         
             .rating-icons input[type="radio"]:checked ~ label {
